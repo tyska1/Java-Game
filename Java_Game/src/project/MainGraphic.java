@@ -7,4 +7,3 @@ public class MainGraphic {
 		window.setVisible(true);
 	}
 }
-//komentarz a
