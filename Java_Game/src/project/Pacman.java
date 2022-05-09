@@ -2,7 +2,6 @@ package project;
 
 import java.awt.Color;
 import java.awt.Graphics;
-//Pacman
 public class Pacman extends Figure {
 
 	private int dx, dy;
