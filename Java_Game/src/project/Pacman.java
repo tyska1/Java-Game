@@ -5,9 +5,9 @@ import java.awt.Graphics;
 public class Pacman extends Figure {
 
 	private int dx, dy;
-	/*boolean eat(Balls p) {
+	boolean eat(Balls p) {
 		return Math.sqrt((X - p.X)*(X - p.X) + (Y - p.Y) * (Y - p.Y)) < 15;
-		}*/
+		}
 	@Override
 	void draw(Graphics g) {
 		g.setColor(Color.yellow);
