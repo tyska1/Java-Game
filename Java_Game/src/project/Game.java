@@ -142,7 +142,7 @@ public class Game extends JFrame implements KeyListener, ActionListener{
 		        {
 		            pointsArray[(int)(Math.random() * size)]++;
 		        }
-		        int suma = Arrays.stream(pointsArray).sum();
+	//	        int suma = Arrays.stream(pointsArray).sum();
 		        return pointsArray;
 		    }
 		
@@ -151,7 +151,7 @@ public class Game extends JFrame implements KeyListener, ActionListener{
 			int x,y, randX,randY,punkty;
 	//		List<Integer> sumPoints = createPointsList();
 			int pointsTable[] = createPointsArray(10,300);
-			int suma = Arrays.stream(pointsTable).sum();
+	//		int suma = Arrays.stream(pointsTable).sum();
 	//		System.out.println(sumPoints.toString());
 			for (int i = 0; i < 10; i++) {
 			randX = r.nextInt(getWidth()-20);
