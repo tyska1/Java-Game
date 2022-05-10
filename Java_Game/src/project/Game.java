@@ -202,9 +202,10 @@ public class Game extends JFrame implements KeyListener, ActionListener{
 			if (keyCode == KeyEvent.VK_SPACE) {
 			pacman.direction(0, 0); 
 			}
-			
 			if (keyCode == KeyEvent.VK_ENTER) {
 				start(); }
+			if (keyCode == KeyEvent.VK_ESCAPE) {
+				this.setVisible(false); }
 			
 	}
 
