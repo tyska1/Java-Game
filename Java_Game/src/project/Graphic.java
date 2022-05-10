@@ -66,12 +66,7 @@ public class Graphic extends JFrame {
 		buttonGamePlay.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            		JFrame frame1 = new JFrame("Tryb rozgrywka");
-            		frame1.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            		frame1.setSize(300,200);
-            		frame1.setLocation(width/4, height/4);
-            		frame1.setIconImage(Toolkit.getDefaultToolkit().getImage("pacman.png"));
-            		frame1.setVisible(true);
+            		Game frame1 = new Game(width, height, "Tryb rozgrywka",0);
             }
         });
 		
@@ -79,12 +74,7 @@ public class Graphic extends JFrame {
 	    buttonGameExercise.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            		JFrame frame1 = new JFrame("Tryb æwiczenia");
-            		frame1.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            		frame1.setSize(300,200);
-            		frame1.setLocation(width/4, height/4);
-            		frame1.setIconImage(Toolkit.getDefaultToolkit().getImage("pacman.png"));
-            		frame1.setVisible(true);
+            		Game frame2 = new Game(width, height, "Tryb æwiczenia",1);
             }
         });
 	    
