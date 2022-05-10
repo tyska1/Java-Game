@@ -32,7 +32,7 @@ public class Game extends JFrame implements KeyListener, ActionListener{
 	
 	Game(int width, int height, String name, int known) {
 		this.setResizable(false);
-		this.setSize(920, 900);
+		this.setSize(720, 700);
 		pacmanColor = new JButton("Pacman color");
 		pacmanColor.addActionListener(this);
 		pacmanColor.setFocusable(false);
@@ -53,16 +53,13 @@ public class Game extends JFrame implements KeyListener, ActionListener{
 		pointsLabel.setBounds(0,0,100,100);
 		pointsLabel.setText("POINTS: \n  " + pacman.punkty + "  ");
 		pointsLabel.setVisible(false);
-		menuPanel.setBounds(0, 0, 900, 100);
-		board.setBounds(50, 100, 800, 700);
+		menuPanel.setBounds(0, 0, 700, 100);
+		board.setBounds(50, 100, 600, 500);
 
 		this.add(board);
 		this.add(menuPanel);
-		//board.setBounds(500, 700, 0, 0);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		//this.setLocation(width/4, height/4);
 		this.setTitle(name);
-		//frame1.setIconImage(Toolkit.getDefaultToolkit().getImage("pacman.png"));
 		this.setVisible(true);
 		setFocusable(true);
 		addKeyListener(this);
@@ -184,28 +181,26 @@ public class Game extends JFrame implements KeyListener, ActionListener{
 
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
 			int keyCode = e.getKeyCode();
 			if (keyCode == KeyEvent.VK_UP) {
-			pacman.direction(0, -1); // w g�r�
+			pacman.direction(0, -1); 
 			}
 			if (keyCode == KeyEvent.VK_DOWN) {
-			pacman.direction(0, 1); // w d�
+			pacman.direction(0, 1); 
 			}
 			if (keyCode == KeyEvent.VK_LEFT) {
-			pacman.direction(-1, 0); // w lewo
+			pacman.direction(-1, 0); 
 			}
 			if (keyCode == KeyEvent.VK_RIGHT) {
-			pacman.direction(1, 0); // w prawo
+			pacman.direction(1, 0); 
 			}
 			if (keyCode == KeyEvent.VK_SPACE) {
-			pacman.direction(0, 0); // stop
+			pacman.direction(0, 0); 
 			}
 			
 			if (keyCode == KeyEvent.VK_ENTER) {
@@ -255,14 +250,7 @@ public class Game extends JFrame implements KeyListener, ActionListener{
 
 		board.repaint() ;
 
-		if(board.isOver) {//System.out.println(pacman.punkty);
-			//this.removeAll();
-			//Board result = new Board();
-			//result.setBounds(500, 700, 0, 0);
-			//this.add(result);
-			//result.setVisible(true);
-			//this.dispose();
-			//board.isOver = false;
+		if(board.isOver) {
 			timeCounter.stop();
 			board.setVisible(false);
 			menuPanel.setVisible(false);
@@ -272,7 +260,6 @@ public class Game extends JFrame implements KeyListener, ActionListener{
 			result.add(new JLabel("KONIEC, czas: "+time+" punkty: " + pacman.punkty));
 		}
 		
-		//board.repaint() ;
 		
 	}
 
