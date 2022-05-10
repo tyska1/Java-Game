@@ -32,10 +32,10 @@ public class Pacman extends Figure {
 		Y += dy;
 		
 		if (X < 15) { X = 15; dx = -dx;}
-		if (X > 785) { X = 785; dx = -dx; }
+		if (X > 585) { X = 585; dx = -dx; }
 		
 		if (Y < 15) { Y = 15; dy = -dy;}
-		if (Y > 685) { Y = 685; dy = -dy; }
+		if (Y > 485) { Y = 485; dy = -dy; }
 	}
 	
 	Pacman(int X, int Y, Color color) {
