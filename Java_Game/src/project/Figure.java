@@ -19,13 +19,10 @@ public abstract class Figure implements Runnable {
 		while (true) {
 		changeState();
 		try {
-			Thread.sleep(delay); //usypia w¹tek
+			Thread.sleep(delay);
 		} catch (InterruptedException ex) { 
-			//throw new Exception(ex.getMessage());
-			 //throw new InterruptedException();
 			System.out.println(ex.getMessage());
 		}
-		
 		}
 	}
 }

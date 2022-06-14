@@ -33,7 +33,10 @@ public class Graphic extends JFrame {
 	private JButton buttonGamePlay, buttonGameExercise, places;
 	private JComboBox majorChoice;
 	private GUIBilder graphicBilder;
-	
+
+	private String nazwa1 = "Tryb rozgrywka";
+	private String nazwa2 = "Tryb æwiczenia";
+		
 	Graphic(){
 		
 		this.setSize(640,560);
@@ -66,7 +69,9 @@ public class Graphic extends JFrame {
 		buttonGamePlay.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            		Game frame1 = new Game(width, height, "Tryb rozgrywka",0);
+            	
+            		Game frame1 = new Game(width, height, nazwa1,0, (String)majorChoice.getSelectedItem());
+            		frame1.setIconImage(Toolkit.getDefaultToolkit().getImage("pacman.png"));
             }
         });
 		
@@ -74,11 +79,19 @@ public class Graphic extends JFrame {
 	    buttonGameExercise.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            		Game frame2 = new Game(width, height, "Tryb æwiczenia",1);
+            		Game frame2 = new Game(width, height, nazwa2,1, (String)majorChoice.getSelectedItem());
+            		frame2.setIconImage(Toolkit.getDefaultToolkit().getImage("pacman.png"));
             }
         });
 	    
 	    places = graphicBilder.prepareButton("Ranking");
+		places.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Ranking frame3 = new Ranking(width, height, "Ranking",1, (String)majorChoice.getSelectedItem());
+				frame3.setIconImage(Toolkit.getDefaultToolkit().getImage("pacman.png"));
+			}
+		});
 		
 		centerPanel.add(buttonGamePlay);
 		centerPanel.add(buttonGameExercise);
@@ -88,6 +101,36 @@ public class Graphic extends JFrame {
 		bottomPanel = graphicBilder.preparePanel("Bottom");
 		labelBottom = graphicBilder.prepareLabel();
 		majorChoice = graphicBilder.prepareBox();
+		majorChoice.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				switch ((String)majorChoice.getSelectedItem()) {
+					case "Polski":
+						buttonGamePlay.setText("<html><p style=text-align:center>Nowa gra</p><p style=text-align:center>tryb rozgrywka</p></html>");
+						buttonGameExercise.setText("<html><p style=text-align:center>Nowa gra</p><p style=text-align:center>tryb æwiczenia</p></html>");
+						places.setText("Ranking");
+						nazwa1 = "Tryb rozgrywka";
+						nazwa2 = "Tryb æwiczenia";
+						break;
+					case "English":
+						buttonGamePlay.setText("<html><p style=text-align:center>New game</p><p style=text-align:center>game mode</p></html>");
+						buttonGameExercise.setText("<html><p style=text-align:center>New game</p><p style=text-align:center>practice mode</p></html>");
+						places.setText("Ranking");
+						nazwa1 = "Game mode";
+						nazwa2 = "Practice mode";
+						break;
+					case "Deutsch":
+						buttonGamePlay.setText("<html><p style=text-align:center>Neuses Spiel</p><p style=text-align:center>Spielmodus</p></html>");
+						buttonGameExercise.setText("<html><p style=text-align:center>Neuses Spiel</p><p style=text-align:center>Übungsmodus</p></html>");
+						places.setText("Rangfolge");
+						nazwa1 = "Spielmodus";
+						nazwa2 = "Übungsmodus";
+						break;
+					default:
+						throw new IllegalStateException("Unexpected value: " + (String) majorChoice.getSelectedItem());
+				}
+			}
+		});
 
 		bottomPanel.add(majorChoice);  
 		bottomPanel.add(labelBottom);

@@ -5,11 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class GUIBilder {
 	
@@ -36,7 +32,7 @@ public class GUIBilder {
 		JLabel label = new JLabel();
 		ImageIcon imageThree = new ImageIcon("down.png");
 		label.setIcon(imageThree);
-		label.setText("Wersja jêzykowa:");
+		//label.setText("Wersja jêzykowa:");
 		label.setHorizontalTextPosition(JLabel.RIGHT);
 		label.setVerticalTextPosition(JLabel.BOTTOM);
 		label.setIconTextGap(-270);
@@ -78,6 +74,13 @@ public class GUIBilder {
 		choice.setSize(new Dimension(120, 30)); 
 	
 		return choice;
+	}
+
+	public JLabel prepareResultLabels() {
+
+		JLabel label = new JLabel("", SwingConstants.CENTER);
+		label.setFont(new Font("Comic Sans", Font.BOLD, 20));
+		return label;
 	}
 	
 }

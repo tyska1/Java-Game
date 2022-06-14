@@ -14,7 +14,6 @@ public class Balls extends Figure {
 		this.delay = 1000;
 		this.punkty = punkty;
 		this.color = colors[new Random().nextInt(colors.length)];
-		System.out.println((X-10) + "   " + (Y-10));
 	}
 
 	@Override
@@ -23,8 +22,6 @@ public class Balls extends Figure {
 		g.fillOval(X-10, Y-10, 20, 20);
 		g.setColor(Color.white);
 		g.drawString(punkty + "", X-5, Y+5);
-
-		
 	}
 
 	@Override
